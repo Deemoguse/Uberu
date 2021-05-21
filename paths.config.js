@@ -8,7 +8,7 @@ module.exports = {
     pug: {
       dev: baseSrc + '/index.pug',
       prod: baseSrc + '/index.pug',
-      watch: baseSrc + '/**/*.pug'
+      watch: baseSrc + '/**/*.pug',
     },
     scss: {
       dev: baseSrc + '/assets/scss/index.scss',
@@ -23,13 +23,15 @@ module.exports = {
     img: {
       dev: baseSrc + '/assets/img/**/**',
       prod: baseSrc + '/assets/img/**/**',
-      watch: baseSrc + '/assets/img/**/**'
+      watch: baseSrc + '/assets/img/**/**',
     },
+    fonts: baseSrc + '/assets/fonts/**/*.ttf',
   },
   dist: {
     html: baseDist,
     css: baseDist,
     js: baseDist,
     img: baseDist + '/img/',
+    fonts: baseDist + '/fonts/',
   }
 }
