@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "ES2016",
+      "DOM",
+    ],
+    "allowJs": true,
+    "declaration": false,
+  },
+  "include": [
+    "src/scripts/**/*.ts"
+  ],
+}

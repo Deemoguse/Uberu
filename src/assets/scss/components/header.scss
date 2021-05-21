@@ -1,0 +1,78 @@
+@import '../includes/mixins';
+@import '../includes/variables';
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 16px 35px 0 54px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  // header includes
+  &__logo {
+    display: flex;
+  }
+
+  &__switch {
+    padding: 11px 15px 13px;
+    margin: 0 auto 0 29px;
+    border-radius: 9999px;
+    background-color: $purple;
+
+    // $__switch includes
+    &_item {
+      color: $secondaryText;
+
+      &.active {
+        color: $white;
+      }
+    }
+
+    &_item + &_item {
+      margin-left: 28px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+
+    // &__nav includes
+    &_item {
+      @include menuText;
+
+      & + & {
+        margin-left: 32px;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    margin: 0 58px 0 auto;
+
+    // &__info includes
+    &_item {
+      @include textBold
+    }
+
+    &_item + &_item {
+      display: flex;
+      align-items: center;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 14px;
+        margin: 0 15px;
+        background-color: $black;
+      }
+    }
+  }
+
+  &__menuIcon {
+    display: flex;
+  }
+}

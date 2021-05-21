@@ -1,0 +1,36 @@
+//- <script>
+-
+  var navList = [
+    {title: 'После ремонта', url: '#' },
+    {title: 'Генеральная уборка', url: '#' },
+    {title: 'Регулярная уборка', url: '#' },
+    {title: 'Регулярная уборка', url: '#' },
+    {title: 'Мойка окон', url: '#' },
+  ]
+  var phone = '+380 67 401 69 77'
+  var workTime = '24/7'
+
+//- </script>
+
+//- <template>
+header.header
+  a.header__logo(href="#top")
+    img(src="img/icons/logo.svg" alt="уберем.")
+
+  .header__switch
+    button.header__switch_item Дом
+    button.header__switch_item Офис
+    .header__switch_placeholder
+
+  nav.header__nav
+    each link in navList
+      a.header__nav_item(href= link.url)= link.title
+
+  .header__info
+    a.header__info_item(href="tel: " + phone)= phone
+    p.header__info_item= workTime + "\s"
+
+  .header__menuIcon
+    img(src="img/icons/menuIcon.svg" alt="menu")
+
+//- </template>

@@ -1,0 +1,36 @@
+@mixin articleText {
+  font-size: 16px;
+  line-height: 140%;
+}
+
+@mixin buttomPrimaryText {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+@mixin caption {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 130%;
+}
+
+@mixin menuText {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+}
+
+@mixin textBold {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 120%;
+}
+
+@mixin switchText {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 110%;
+}
