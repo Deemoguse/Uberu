@@ -9,7 +9,7 @@
   ]
 
   var switchList = [
-    {title: 'Дом', url: '#', id: 'home'},
+    {title: 'Дом', url: '#', id: 'home', active: true},
     {title: 'Офис', url: '#', id: 'office'},
   ]
 
@@ -24,16 +24,22 @@ header.header
 
   .header__switch
     each item in switchList
-      a.header__switch_item(href=item.url, data-switch-id=item.id)= item.title
+      a.header__switch_item(
+        class=item.active && 'active',
+        href=item.url,
+        data-switch-id=item.id
+      )= item.title
 
   nav.header__nav
     each link in navList
       a.header__nav_item(href=link.url)= link.title
 
   .header__info
-    a.header__info_item(href="tel: " + phone)= phone
-    p.header__info_item= workTime
+    a.header__info_item.header__info_item-anim(href="tel:" + phone)
+      = phone
+    p.header__info_item
+      = workTime
 
   .header__menuIcon
-    img(src="img/icons/menuIcon.svg" alt="menu")
+    img.header__menuIcon_item(src="img/icons/menuIcon.svg" alt="menu")
 //- </template>

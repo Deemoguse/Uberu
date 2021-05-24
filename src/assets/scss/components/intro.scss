@@ -7,7 +7,7 @@
   &__leftSide {
     background-image: url('img/intro_left_aside.png');
     background-size: cover;
-    background-position: 50% 50%;
+    background-position: 50% 0;
   }
 
   &__rightSide {
@@ -23,5 +23,13 @@
     &_item + &_item {
       margin-top: 30px;
     }
+  }
+
+  &__floatButton {
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    transform: translateX(-50%);
+    z-index: 1;
   }
 }

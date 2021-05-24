@@ -1,5 +1,5 @@
-@import '../includes/mixins';
-@import '../includes/variables';
+@import '../common/mixins';
+@import '../common/variables';
 
 .header {
   display: flex;
@@ -9,6 +9,13 @@
   top: 0;
   left: 0;
   right: 0;
+  transition: 0.35s;
+  z-index: 1;
+
+  &.fill {
+    background-color: $white;
+    box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.07);
+  }
 
   // header includes
   &__logo {
@@ -18,6 +25,7 @@
   &__switch {
     margin: 0 auto 0 29px;
     padding: 3px;
+    border: 1px solid #E2E8F0;
     border-radius: 9999px;
     position: relative;
     background-color: $white;
@@ -58,6 +66,7 @@
     // &__nav includes
     &_item {
       @include menuText;
+      @include runninUnderline($width: 1px);
 
       & + & {
         margin-left: 32px;
@@ -71,7 +80,11 @@
 
     // &__info includes
     &_item {
-      @include textBold
+      @include textBold;
+
+      &-anim {
+        @include runninUnderline($width: 2px);
+      }
     }
 
     &_item + &_item {

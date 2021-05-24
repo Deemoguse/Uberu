@@ -9,7 +9,7 @@ const { devHandleImg, prodHandleImg, watchImg } = require('./tasks/handleImg')
 const { devHandlePug, prodHandlePug, watchPug  } = require('./tasks/handlePug')
 const { devHandleScss, prodHandleScss, watchScss } = require('./tasks/handleScss')
 const { devHandleTs, prodHandleTs, watchTs } = require('./tasks/handleTs')
-const { handleFonst, watchFonts } = require('./tasks/handleFonst')
+const { handleFonts, watchFonts } = require('./tasks/handleFonst')
 
 // ================================================
 
@@ -33,5 +33,5 @@ const startServe = () => {
 
 // ================================================
 
-exports.serve = series(cleanDist, devHandlePug, devHandleTs, devHandleScss, handleFonst, devHandleImg, startServe)
-exports.build = series(cleanDist, prodHandlePug, prodHandleTs, prodHandleScss, handleFonst, prodHandleImg)
+exports.serve = series(cleanDist, devHandlePug, devHandleTs, devHandleScss, handleFonts, devHandleImg, startServe)
+exports.build = series(cleanDist, prodHandlePug, prodHandleTs, prodHandleScss, handleFonts, prodHandleImg)

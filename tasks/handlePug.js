@@ -17,7 +17,10 @@ const pugLinterOptions = {
 function devHandlePug () {
   return src(path.src.pug.dev)
     .pipe(pugLinter(pugLinterOptions))
-    .pipe(pug())
+    .pipe(pug({
+      debug: false,
+      compileDebug: false
+    }))
     .pipe(dest(path.dist.html))
 }
 

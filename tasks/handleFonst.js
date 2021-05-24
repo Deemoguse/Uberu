@@ -3,18 +3,18 @@ const path = require('../paths.config')
 
 // ================
 
-function handleFonst () {
+function handleFonts () {
   return src(path.src.fonts)
     .pipe(dest(path.dist.fonts))
 }
 
 function watchFonts () {
-  watch(path.src.fonts, handleFonst)
+  watch(path.src.fonts, handleFonts)
 }
 
 // ================
 
 module.exports = {
-  handleFonst,
+  handleFonts,
   watchFonts,
 }

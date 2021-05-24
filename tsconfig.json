@@ -1,13 +1,11 @@
 {
   "compilerOptions": {
-    "lib": [
-      "ES2016",
-      "DOM",
-    ],
     "allowJs": true,
-    "declaration": false,
+    "lib": ["DOM","ES6"],
   },
   "include": [
-    "src/scripts/**/*.ts"
+    "./src/scripts/**/*.ts",
+    "/node_modules/@types/animejs/index.d.ts",
   ],
+  "exclude": ["node_modules/"]
 }

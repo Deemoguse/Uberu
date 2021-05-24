@@ -16,8 +16,12 @@ module.exports = {
       watch: baseSrc + '/assets/scss/**/*.scss',
     },
     ts: {
-      dev: baseSrc + '/scripts/index.ts',
-      prod: baseSrc + '/scripts/index.ts',
+      dev: baseSrc + '/scripts/**/*.ts',
+      prod:baseSrc + '/scripts/**/*.ts',
+      contac: [
+        __dirname + '/node_modules/animejs/lib/anime.min.js',
+        __dirname + '/node_modules/parallax-js/dist/parallax.min.js'
+      ],
       watch: baseSrc + '/scripts/**/*.ts'
     },
     img: {

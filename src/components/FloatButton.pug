@@ -1,0 +1,15 @@
+//- <template>
+mixin floatButton(userProps)
+
+  - var props = {}
+  - props.text = userProps.text ? userProps.text : ''
+  - props.extendClass = userProps.extendClass ? userProps.extendClass : false
+  - props.tag = userProps.tag ? userProps.tag : 'button'
+  - props.attrs = userProps.attrs ? userProps.attrs : false
+
+  div.floatButton(class=props.extendClass)
+    #{props.tag}.floatButton__button&attributes(props.attrs)
+      span.floatButton__innerText
+        = props.text
+
+//- </template>
