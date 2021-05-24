@@ -4,7 +4,7 @@
 .header {
   display: flex;
   align-items: center;
-  padding: 16px 35px 17px 54px;
+  padding: 16px 35px 17px;
   position: fixed;
   top: 0;
   left: 0;
@@ -45,7 +45,7 @@
 
     &_item {
       display: inline-block;
-      padding: 8px 15px 9px;
+      padding: 8px 12px 9px;
       border-radius: 9999px;
       @include switchText();
 
@@ -76,7 +76,7 @@
 
   &__info {
     display: flex;
-    margin: 0 58px 0 auto;
+    margin: 0 30px 0 auto;
 
     // &__info includes
     &_item {

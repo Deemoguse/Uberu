@@ -1,0 +1,13 @@
+@import '../common/variables';
+
+.interactiveMap {
+  display: grid;
+  grid-template-columns: 375px 1fr;
+  min-height: 100vh;
+
+  &__aside {
+    width: 100%;
+    height: 100%;
+    background-color: $purple;
+  }
+}

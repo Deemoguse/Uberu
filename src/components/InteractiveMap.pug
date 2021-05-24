@@ -1,0 +1,74 @@
+//- <script>
+-
+  var urlPath = 'img'
+-
+  var optionsList = [
+    {
+      title: 'Кухня',
+      index: 'kitchen',
+      map: {
+        imgUrl: urlPath + 'service_1.png',
+        tooltips: [
+          {x: 13.85, y: 23, tooltip: 'Чистим фасад вытяжки'},
+          {x: 17, y: 13.25, tooltip: 'Чистим фасад вытяжки'},
+          {x: 24.25, y: 24.5, tooltip: 'Чистим фасад вытяжки'},
+          {x: 32, y: 19.45, tooltip: 'Чистим фасад вытяжки'},
+          {x: 30, y: 30, tooltip: 'Чистим фасад вытяжки'},
+          {x: 42.25, y: 25.5, tooltip: 'Чистим фасад вытяжки'},
+          {x: 15.75, y: 36.5, tooltip: 'Чистим фасад вытяжки'},
+        ]
+      }
+    },
+    {
+      title: 'Комнаты',
+      index: 'rooms',
+      map: {
+        imgUrl: urlPath + 'service_2.png',
+        tooltips: [
+          {x: 13, y: 12.75, tooltip: 'Чистим фасад вытяжки'},
+          {x: 15.75, y: 36.5, tooltip: 'Чистим фасад вытяжки'},
+          {x: 29.25, y: 36, tooltip: 'Чистим фасад вытяжки'},
+          {x: 32.25, y: 19.5, tooltip: 'Чистим фасад вытяжки'},
+          {x: 41.5, y: 32.5, tooltip: 'Чистим фасад вытяжки'},
+        ]
+      }
+    },
+    {
+      title: 'Ванная',
+      index: 'bathroom',
+      map: {
+        imgUrl: urlPath + 'service_1.png',
+        tooltips: [
+          {x: 13.85, y: 23, tooltip: 'Чистим фасад вытяжки'},
+          {x: 17, y: 13.25, tooltip: 'Чистим фасад вытяжки'},
+          {x: 24.25, y: 24.5, tooltip: 'Чистим фасад вытяжки'},
+          {x: 32, y: 19.45, tooltip: 'Чистим фасад вытяжки'},
+          {x: 30, y: 30, tooltip: 'Чистим фасад вытяжки'},
+          {x: 42.25, y: 25.5, tooltip: 'Чистим фасад вытяжки'},
+          {x: 15.75, y: 36.5, tooltip: 'Чистим фасад вытяжки'},
+        ]
+      }
+    },
+    {
+      title: 'Прихожая',
+      index: 'hallway',
+      map: {
+        imgUrl: urlPath + 'service_2.png',
+        tooltips: [
+          {x: 13, y: 12.75, tooltip: 'Чистим фасад вытяжки'},
+          {x: 15.75, y: 36.5, tooltip: 'Чистим фасад вытяжки'},
+          {x: 29.25, y: 36, tooltip: 'Чистим фасад вытяжки'},
+          {x: 32.25, y: 19.5, tooltip: 'Чистим фасад вытяжки'},
+          {x: 41.5, y: 32.5, tooltip: 'Чистим фасад вытяжки'},
+        ]
+      }
+    },
+  ]
+//- </script>
+
+//- <template>
+section.interactiveMap
+  aside.interactiveMap__aside
+    nav.interactiveMap__nav
+      //- генерация интерактивной карты
+//- </template>
