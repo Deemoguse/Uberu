@@ -49,15 +49,18 @@ const ANIME_BUTTOM_INITIAL_ROTATE = () => anime({
 
 // Инизиализация
 let lockAnime = false
+let hiddenButton = false
 // Анимация при скролле
 function scrollAnimefloatButton () {
   // Скрытие кнопки после скролла q&a
-  if (window.pageYOffset >= 1290) {
-    return ANIME_BUTTON_HIDDEN()
+  if (window.pageYOffset >= 1450 && hiddenButton === false) {
+    ANIME_BUTTON_HIDDEN()
+    hiddenButton = true
   }
   // Показывает кнопку при скролле наверх
-  if (window.pageYOffset <= 1290 && window.pageYOffset >= window.innerHeight * 1.25) {
+  if (window.pageYOffset <= 1450 && window.pageYOffset >= window.innerHeight * 1.25 && hiddenButton === true) {
     ANIME_BUTTOM_REDUCTON()
+    hiddenButton = false
   }
 
   if (window.pageYOffset > 150 && lockAnime === false) {
@@ -79,11 +82,12 @@ function scrollAnimefloatButton () {
   // если мы в самом начале страницы то откатывает состояние
   if (window.pageYOffset === 0 && lockAnime === true) {
     // Воспроизводим анимации
-    ANIME_BUTTON_INITIAL_SIZE()
+    ANIME_BUTTOM_INITIAL_ROTATE()
     // После завершения анимации возвращаем исходные свойства
-    ANIME_BUTTOM_INITIAL_ROTATE().finished.then(() => {
-      floatButtonWrapper.style.position = 'absolute'
-      floatButtonWrapper.style.top = 'auto'
+    ANIME_BUTTON_INITIAL_SIZE().finished.then(() => {
+      // Предотвращение бага с возвращением исходного состояния при скролле
+      !lockAnime && (floatButtonWrapper.style.position = 'absolute')
+      !lockAnime && (floatButtonWrapper.style.top = 'auto')
     })
 
     // Разрешаем повторное воспроизведение анимации и завершаем функцию
