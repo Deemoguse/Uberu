@@ -29,20 +29,13 @@ const ANIME_BUTTON_HIDDEN = () => anime({
 })
 
 // Анимации сброса (возвращение в исходное состояние)
-const ANIME_BUTTON_INITIAL_SIZE = (ended = true) => anime({
+const ANIME_BUTTON_INITIAL_SIZE = () => anime({
   // Поднятие кнопки в исходное положение
   targets: floatButtonWrapper,
   bottom: 30,
   translateX: [{value: '-50%', duration: 0}],
   scale: 1,
   easing: floatButtonEasing,
-  begin: function () {
-    // Перманентное применение исходных свойств
-    if (ended && !lockAnime) {
-      floatButtonWrapper.style.position = 'absolute'
-      floatButtonWrapper.style.top = 'auto'
-    }
-  }
 })
 
 const ANIME_BUTTOM_INITIAL_ROTATE = () => anime({
@@ -87,7 +80,11 @@ function scrollAnimefloatButton () {
   if (window.pageYOffset === 0 && lockAnime === true) {
     // Воспроизводим анимации
     ANIME_BUTTON_INITIAL_SIZE()
-    ANIME_BUTTOM_INITIAL_ROTATE()
+    // После завершения анимации возвращаем исходные свойства
+    ANIME_BUTTOM_INITIAL_ROTATE().finished.then(() => {
+      floatButtonWrapper.style.position = 'absolute'
+      floatButtonWrapper.style.top = 'auto'
+    })
 
     // Разрешаем повторное воспроизведение анимации и завершаем функцию
     return (lockAnime = false)
@@ -103,8 +100,6 @@ function hoverAnimefloatButton (e: MouseEvent) {
 
   // Функция параллакса
   const parallax = (e: MouseEvent) => {
-    // оснатавливаем анимации
-
     const range = 100
     const x = mousePos(e.clientX, 'x')
     const y = mousePos(e.clientY, 'y')
@@ -126,12 +121,12 @@ function hoverAnimefloatButton (e: MouseEvent) {
 
   // Если кнопка уже провалилась к нижней части окна, то откатываем состояние и поднимает вверх
   if (lockAnime) {
-    ANIME_BUTTON_INITIAL_SIZE(false)
+    ANIME_BUTTON_INITIAL_SIZE()
     ANIME_BUTTOM_INITIAL_ROTATE()
   }
 
+  // Удаляем слушатель и обнуляем анимацию
   floatButton.addEventListener('mouseleave', function () {
-    // Удаляем слушатель и обнуляем анимацию
     window.removeEventListener('mousemove', parallax)
 
     // Если кнопка уже провалилась к нижней части окна, то откатываем состояние и поднимает вверх

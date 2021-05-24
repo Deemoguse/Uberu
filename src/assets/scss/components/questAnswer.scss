@@ -1,0 +1,19 @@
+.questAnswer {
+  display: grid;
+  grid-template-rows: auto 630px;
+  row-gap: 52px;
+  max-width: 1094px;
+  margin: 0 auto;
+  padding: 74px 0 142px;
+
+  // questAnswer includes
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__paragraph {
+    max-width: 414px;
+    padding: 13px 11px 0;
+  }
+}
