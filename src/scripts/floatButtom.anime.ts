@@ -47,9 +47,10 @@ const ANIME_BUTTOM_INITIAL_ROTATE = () => anime({
   easing: floatButtonEasing,
 })
 
-// Инизиализация
+// Cостояния
 let lockAnime = false
 let hiddenButton = false
+
 // Анимация при скролле
 function scrollAnimefloatButton () {
   // Скрытие кнопки после скролла q&a

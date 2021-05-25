@@ -1,5 +1,5 @@
-@import './common/fonts';
 @import './common/reset';
+@import './common/fonts';
 @import './common/variables';
-@import './common/global';
+@import './common/mixins';
 @import './components/*.scss'

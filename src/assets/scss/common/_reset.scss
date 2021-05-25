@@ -16,6 +16,10 @@ html, button, input, textarea {
   line-height: 140%;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 h1 {
   font-style: normal;
   font-weight: normal;

@@ -1,4 +1,3 @@
-//- <script>
 -
   var imgPath = 'img/card_'
   var features = [{
@@ -31,11 +30,9 @@ mixin featuresCard (title, desc, img, alt)
     .features__item__back
       p.features__desc= desc
 
-//- </script>
+//- ==============================
 
-//- <template>
 section.features
   ul.features__list
     each item in features
       +featuresCard(item.title, item.desc, item.img, item.imgAlt)
-//- </template>

@@ -9,13 +9,9 @@
   top: 0;
   left: 0;
   right: 0;
-  transition: 0.35s;
+  background: rgba(255, 255, 255, 0);
+  transition: 0.25s linear;
   z-index: 1;
-
-  &.fill {
-    background-color: $white;
-    box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.07);
-  }
 
   // header includes
   &__logo {

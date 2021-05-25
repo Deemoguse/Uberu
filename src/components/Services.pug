@@ -1,7 +1,8 @@
-//- <script>
+include ./tooltipMap.pug
+
 -
   var urlPath = 'img'
--
+  //- положение тултипов определяется с помощью абстрактной сетки с шагом в 20px
   var optionsList = [
     {
       title: 'Кухня',
@@ -64,11 +65,19 @@
       }
     },
   ]
-//- </script>
 
-//- <template>
-section.interactiveMap
-  aside.interactiveMap__aside
-    nav.interactiveMap__nav
-      //- генерация интерактивной карты
-//- </template>
+//- ============
+
+section.services
+  aside.services__aside
+    h6.services__tagline.services__item
+      | Как мы убираем
+
+    nav.services__nav
+      //- генерация навигации интерактивной карты
+      each item in optionsList
+        button.services__button.services__item
+          h2= item.title
+
+  .services__map
+    //- +services

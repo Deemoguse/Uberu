@@ -1,0 +1,64 @@
+@import '../common/variables';
+
+.services {
+  min-height: 100vh;
+
+  &__aside {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    width: 370px;
+    height: 100%;
+
+    position: fixed;
+    top: 0;
+    left: -370px;
+
+    background-color: $purple;
+  }
+
+  &__tagline {
+    width: 370px;
+    padding: 35px 40px 0;
+    color: $white;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+    margin: auto 0;
+    padding: 0 36px 70px 40px;
+  }
+
+  &__button h2 {
+    position: relative;
+    text-align: left;
+    color: $white;
+    transition: 0.35s;
+    cursor: pointer;
+
+    & + & {margin-top: 20px}
+
+    &::before {
+      content: '→ ';
+      position: absolute;
+      top: 0;
+      left: -50px;
+      opacity: 0;
+      transition: 0.35s;
+    }
+
+    &:hover {
+      padding-left: 60px;
+      transform: skewX(-15deg);
+    }
+
+    &:hover::before {
+      opacity: 1;
+      left: 0;
+      transform: skewX(15deg);
+    }
+  }
+}

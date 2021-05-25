@@ -1,0 +1,10 @@
+mixin tooltipMap (data)
+  - var tooltipList = []
+  //- фильтрация массива
+  each el in data
+    tooltipList.push(el.map)
+
+  //- создаем экзампляры карт
+  each item in tooltipList
+    .tooltop_item(style={background: `url(${item.imgUrl})`})
+      +tooltop()

@@ -19,8 +19,7 @@ module.exports = {
       dev: baseSrc + '/scripts/**/*.ts',
       prod:baseSrc + '/scripts/**/*.ts',
       contac: [
-        __dirname + '/node_modules/animejs/lib/anime.min.js',
-        __dirname + '/node_modules/parallax-js/dist/parallax.min.js'
+        __dirname + '/node_modules/animejs/lib/anime.min.js'
       ],
       watch: baseSrc + '/scripts/**/*.ts'
     },
