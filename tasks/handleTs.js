@@ -22,7 +22,8 @@ function devHandleTs () {
 function prodHandleTs () {
   return src([...path.src.ts.contac, path.src.ts.dev])
     .pipe(tsProject())
-    .pipe(concat('index.js'))
+    .pipe(concat('index.js', {newLine: ';'}))
+    .pipe(babel())
     .pipe(uglify())
     .pipe(dest(path.dist.js))
 }
