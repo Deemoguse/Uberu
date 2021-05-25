@@ -1,19 +1,14 @@
 @import '../common/variables';
 
 .services {
+  display: flex;
   min-height: 100vh;
 
   &__aside {
+    flex: 1;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-
-    width: 370px;
-    height: 100%;
-
-    position: fixed;
-    top: 0;
-    left: -370px;
 
     background-color: $purple;
   }
@@ -32,14 +27,14 @@
     padding: 0 36px 70px 40px;
   }
 
+
   &__button h2 {
+    display: block;
     position: relative;
     text-align: left;
     color: $white;
     transition: 0.35s;
     cursor: pointer;
-
-    & + & {margin-top: 20px}
 
     &::before {
       content: '→ ';
@@ -60,5 +55,9 @@
       left: 0;
       transform: skewX(15deg);
     }
+  }
+
+  &__button + &__button {
+    margin-top: 20px
   }
 }

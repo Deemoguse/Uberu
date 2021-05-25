@@ -1,6 +1,8 @@
+@import '../common/mixins';
+
 .intro {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   min-height: 100vh;
 
   // intro includes

@@ -1,0 +1,9 @@
+mixin tooltip(props)
+  - var ttPos = {left: props.x + '%', top: props.y + '%'}
+
+  .tooltip__item(style=ttPos)
+    .tooltip__item_container
+      button.tooltip__item_button
+        img(src="img/icons/plus.svg")
+      p.tooltip__item_text
+        = props.tooltip

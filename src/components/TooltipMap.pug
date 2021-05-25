@@ -1,10 +1,13 @@
-mixin tooltipMap (data)
-  - var tooltipList = []
-  //- фильтрация массива
-  each el in data
-    tooltipList.push(el.map)
+include ./Tooltip.pug
 
-  //- создаем экзампляры карт
-  each item in tooltipList
-    .tooltop_item(style={background: `url(${item.imgUrl})`})
-      +tooltop()
+//- Компонент тесно связан со скриптом 01_tooltipMap.ts
+//- ===================================================
+
+//- создаем экзампляры карт как шаблон
+mixin tooltipMap (optionsList)
+  each item in optionsList
+    .tooltip__mapWrapper(data-map-id= id)
+      img.tooltip__img(src=item.map.imgUrl, alt=item.title)
+      //- создаем экземпляры тултипов
+      each el in item.map.tooltips
+        +tooltip({tooltip:el.tooltip, x: el.x, y: el.y})
