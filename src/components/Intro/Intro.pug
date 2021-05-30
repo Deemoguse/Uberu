@@ -1,0 +1,15 @@
+include ../FloatButton/FloatButton.pug
+
+main.intro
+  .intro__leftSide <!-- empty -->
+  .intro__rightSide
+    h1.intro__rightSide__title.intro__rightSide_item
+      | Уборка квартир в Киеве
+    p.intro__rightSide__tagline.intro__rightSide_item
+      | Мы уберем у вас дома или в офисе. Наведем чистоту после ремонта и проведем генеральную уборку.
+
+  +floatButton({
+    text: 'заказать уборку',
+    attrs: {href: '#test', style: 'display: block'},
+    tag: 'a'
+  })

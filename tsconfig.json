@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
+    "target": "ES6",
+    "lib": ["DOM", "ES6", "DOM.Iterable", "ScriptHost", "ES2016.Array.Include"],
     "allowJs": true,
-    "lib": ["DOM","ES6"],
+    "declaration": false,
+    "esModuleInterop": true,
   },
-  "include": [
-    "./src/scripts/**/*.ts",
-    "/node_modules/@types/animejs/index.d.ts",
-  ],
+  "include": ["src/**/*"],
   "exclude": ["node_modules/"]
 }

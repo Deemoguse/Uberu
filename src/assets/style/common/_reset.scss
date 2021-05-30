@@ -1,0 +1,59 @@
+@import './variables';
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, button, input, textarea {
+  font-family: TTTravels;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 140%;
+  color: $black;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+h1 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 76px;
+  line-height: 110%;
+}
+
+h2 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 44px;
+  line-height: 120%;
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 130%;
+}
+
+h6 {
+  font-size: 16px;
+  line-height: 130%;
+}
+
+button, input {
+  background-color: transparent;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}

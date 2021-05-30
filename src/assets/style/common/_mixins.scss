@@ -1,0 +1,78 @@
+@use 'sass:list';
+@use 'sass:map';
+
+@mixin articleText {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+@mixin buttomPrimaryText {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+@mixin caption {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 130%;
+}
+
+@mixin menuText {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+@mixin textBold {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 120%;
+}
+
+@mixin switchText {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 110%;
+}
+
+@mixin runninUnderline (
+  $pos: relative,
+  $width: 1px,
+  $color: currentColor,
+  $transition: 0.35s,
+  $bottom: -0.2em
+) {
+  position: $pos;
+
+  &::after {
+    content: '';
+    display: block;
+    height: $width;
+    width: 0;
+    position: absolute;
+    bottom: $bottom;
+    left: 50%;
+    transform: translateX(-50%);
+    background: $color;
+    transition: $transition;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+@mixin screen ($size: false, $mobileFirst: false) {
+  $validResp: sm, md, lg, xl;
+  $respList: (sm:425px, md:768px, lg:1024px, xl:1440px);
+  $result: if(list.index($validResp, $size), map.get($respList, $size), $size);
+  $сondition: if($mobileFirst, 'min-width', 'max-width');
+
+  @media screen and #{'('+$сondition+':'+$result+')'} {
+    @content
+  }
+}

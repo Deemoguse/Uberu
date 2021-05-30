@@ -1,0 +1,51 @@
+@import "../../assets/style/common/mixins";
+
+.questAnswer {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  row-gap: 52px;
+  max-width: 1094px;
+  height: 100vh;
+  margin: 0 auto 45px;
+  padding: 120px 20px 75px;
+
+  @include screen(lg) {
+    row-gap: 28px;
+
+    &__title {
+      font-size: 32px;
+      font-weight: 500;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    @include screen(sm) {
+      flex-direction: column;
+      row-gap: 22px;
+    }
+  }
+
+  &__paragraph {
+    max-width: 414px;
+    padding: 13px 11px 0;
+
+    @include screen(sm) {
+      max-width: 100%;
+      padding: 0;
+    }
+  }
+
+  &__img_wrapper {
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,26 @@
+@import "../../assets/style/common/mixins";
+
+.tooltipMap {
+  height: 100vh;
+
+  @include screen(lg) {
+    overflow: scroll;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__wrapper {
+    height: 100%;
+    width: max-content;
+    position: relative;
+  }
+
+  &__img {
+    width: auto;
+    height: 100vh;
+
+    @include screen(lg) {
+      height: 100%;
+    }
+  }
+}

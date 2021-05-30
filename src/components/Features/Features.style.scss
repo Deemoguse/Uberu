@@ -1,0 +1,33 @@
+@import "../../assets/style/common/_mixins.scss";
+
+.features {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 74px 20px;
+
+  @include screen(sm) {
+    padding: 50px 20px;
+  }
+
+  // features includes
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 328px;
+    gap: 40px;
+    max-width: 1320px;
+    list-style: none;
+
+    @include screen(lg) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 328px);
+      gap: 20px;
+    }
+    @include screen(sm) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, 428px);
+      gap: 40px;
+    }
+  }
+}

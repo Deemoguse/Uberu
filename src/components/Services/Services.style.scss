@@ -1,0 +1,74 @@
+@import '../../assets/style/common/variables';
+@import '../../assets/style/common/mixins';
+
+.services {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr auto;
+
+  @include screen(lg) {
+    grid-template-columns: 100vw;
+    grid-template-rows: auto 1fr;
+  }
+
+  &__aside {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    background-color: $purple;
+  }
+
+  &__tagline {
+    width: 370px;
+    padding: 35px 40px 0;
+    color: $white;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+    margin: auto 0;
+    padding: 0 36px 70px 40px;
+
+    @include screen(lg) {
+      padding: 20px 40px 40px;
+    }
+  }
+
+
+  &__button h2 {
+    display: block;
+    position: relative;
+    text-align: left;
+    color: $white;
+    transition: 0.35s;
+    cursor: pointer;
+
+    &::before {
+      content: '→ ';
+      position: absolute;
+      top: 0;
+      left: -50px;
+      opacity: 0;
+      transition: 0.35s;
+    }
+
+    &:hover {
+      padding-left: 60px;
+      transform: skewX(-15deg);
+    }
+
+    &:hover::before {
+      opacity: 1;
+      left: 0;
+      transform: skewX(15deg);
+    }
+  }
+
+  &__button + &__button {
+    margin-top: 20px
+  }
+}

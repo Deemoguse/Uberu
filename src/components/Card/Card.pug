@@ -1,0 +1,7 @@
+mixin Card (title, desc, img, alt)
+  li.card
+    .card__front
+      h4.card__title= title
+      img.card__img(src=img, alt=alt)
+    .card__back
+      p.card__desc= desc

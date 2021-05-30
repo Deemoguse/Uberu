@@ -1,0 +1,11 @@
+mixin floatButton(userProps)
+
+  - var props = {}
+  - props.text = userProps.text ? userProps.text : ''
+  - props.tag = userProps.tag ? userProps.tag : 'button'
+  - props.attrs = userProps.attrs ? userProps.attrs : false
+
+  div.floatButton
+    #{props.tag}.floatButton__button&attributes(props.attrs)
+      span.floatButton__innerText
+        = props.text

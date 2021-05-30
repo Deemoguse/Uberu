@@ -1,0 +1,10 @@
+include ../Tooltip/Tooltip.pug
+
+mixin TooltipMap (optionsList)
+  .tooltipMap
+    each item in optionsList
+      .tooltipMap__wrapper(data-map-id= id)
+        img.tooltipMap__img(src=item.map.imgUrl, alt=item.title)
+
+        each el in item.map.tooltips
+          +Tooltip({tooltip:el.tooltip, x: el.x, y: el.y})

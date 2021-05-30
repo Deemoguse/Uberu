@@ -1,18 +1,17 @@
 doctype html
 html(lang="en")
   head
+    title Uberu
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    meta(name="viewport", content="width=device-width, initial-scale=0.86")
-    link(rel="stylesheet", href="index.css")
-    title Document
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="style.css")
 
   body
-    include ./components/Header.pug
-    include ./components/Intro.pug
-    include ./components/Features.pug
-    include ./components/QuestAnswer.pug
-    include ./components/Services.pug
+    include ./components/Header/Header.pug
+    include ./components/Intro/Intro.pug
+    include ./components/Features/Features.pug
+    include ./components/QuestAnswer/QuestAnswer.pug
+    include ./components/Services/Services.pug
 
-    //- scripts
-    script(src="index.js")
+    script(src="main.js")

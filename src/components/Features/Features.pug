@@ -1,0 +1,6 @@
+include ../Card/Card.pug
+
+section.features
+  ul.features__list
+    each item in features.cards
+      +Card(item.title, item.desc, item.img, item.imgAlt)

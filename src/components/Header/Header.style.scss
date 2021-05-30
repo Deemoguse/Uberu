@@ -1,0 +1,198 @@
+@import '../../assets/style/common/variables';
+@import '../../assets/style/common/mixins';
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 16px 35px 17px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0);
+  transition: 0.25s linear;
+  z-index: 2;
+
+  @include screen(sm) {
+    padding: 16px 20px 17px;
+  }
+
+  &__logo {
+    display: flex;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+
+    @include screen(xl) {
+      flex-direction: column;
+      width: 265px;
+      height: 100vh;
+      padding: 20px;
+      border-left: 1px solid $lightGray;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateX(105%);
+      background-color: $white;
+      box-shadow: rgb(255, 255, 255) 100px 0px 0px, rgb(0 0 0 / 7%) 0px 4px 18px,
+    }
+    @include screen(sm) {
+      width: 100%;
+    }
+  }
+
+  &__headerMenu {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $middleGray;
+    margin-bottom: 25px;
+
+    @include screen(sm) {
+      display: flex;
+    }
+  }
+
+  &__crossIcon {
+    display: flex;
+  }
+
+  &__switch {
+    margin: 0 auto 0 29px;
+    padding: 3px;
+    border: 1px solid #E2E8F0;
+    border-radius: 9999px;
+    position: relative;
+    background-color: $white;
+
+    @include screen(xl) {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      margin: 0;
+    }
+
+    &__item {
+      display: inline-block;
+      padding: 8px 12px 9px;
+      border-radius: 9999px;
+      color: $secondaryText;
+      @include switchText();
+
+      &.active {
+        color: $white;
+        background-color: $purple;
+
+        &:hover {
+          color: $white
+        }
+      }
+
+      &:hover {
+        color: $black
+      }
+
+      @include screen(xl) {
+        flex-grow: 1;
+        text-align: center;
+      }
+      @include screen(sm) {
+        font-size: 18px;
+      }
+    }
+
+    &_item + &_item {
+      margin-left: 5px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+
+    @include screen(xl) {
+      flex-direction: column;
+      width: 100%;
+      padding-top: 15px;
+      border-top: 1px solid $middleGray;
+      margin-top: 25px;
+    }
+
+    &_item {
+      width: max-content;
+      @include menuText;
+      @include runninUnderline($width: 1px);
+
+      @include screen(xl) {
+        padding: 8px 0;
+        @include runninUnderline($width: 1px, $bottom: 0.2em);
+      }
+      @include screen(sm) {
+        font-size: 24px;
+      }
+
+      & + & {
+        margin-left: 32px;
+
+        @include screen(xl) {
+          margin-left: 0;
+          margin-top: 4px;
+        }
+        @include screen(sm) {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    margin-left: auto;
+
+    @include screen(xl) {
+      width: 100%;
+      padding-top: 25px;
+      border-top: 1px solid $middleGray;
+      margin: 15px 0 0 0;
+    }
+
+    &_item {
+      @include textBold;
+      @include screen(sm) {
+        font-size: 24px;
+      }
+
+      &-anim {
+        @include runninUnderline($width: 2px);
+      }
+    }
+
+    &_item + &_item {
+      display: flex;
+      align-items: center;
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 14px;
+        margin: 0 15px;
+        background-color: $black;
+      }
+    }
+  }
+
+  &__menuIcon {
+    display: none;
+    margin-left: 30px;
+    cursor: pointer;
+
+    @include screen(xl) {
+      display: flex;
+      margin-left: auto;
+    }
+  }
+}
