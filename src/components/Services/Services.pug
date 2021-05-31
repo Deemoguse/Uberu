@@ -2,12 +2,12 @@ include ../TooltipMap/TooltipMap.pug
 
 section.services
   aside.services__aside
-    h6.services__tagline.services__item
+    h6.services__tagline
       | Как мы убираем
 
     nav.services__nav
-      each item in service.tooltipMaps
-        button.services__button.services__item(data-map-id= item.index)
+      each item, index in service.tooltipMaps
+        button.services__button
           h2= item.title
 
   +TooltipMap(service.tooltipMaps)

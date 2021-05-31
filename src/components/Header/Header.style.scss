@@ -37,7 +37,8 @@
       right: 0;
       transform: translateX(105%);
       background-color: $white;
-      box-shadow: rgb(255, 255, 255) 100px 0px 0px, rgb(0 0 0 / 7%) 0px 4px 18px,
+      box-shadow: rgb(255, 255, 255) 100px 0px 0px, rgb(0 0 0 / 7%) 0px 4px 18px;
+      z-index: 3;
     }
     @include screen(sm) {
       width: 100%;

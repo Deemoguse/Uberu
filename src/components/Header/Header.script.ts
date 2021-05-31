@@ -1,6 +1,6 @@
 import anime from 'animejs'
 
-class HeaderBase
+class Header
 {
   /*!*/ private elem: HTMLElement
   /*!*/ private trigger: HTMLElement
@@ -116,8 +116,9 @@ class HeaderMenu
 }
 
 function HeaderInit () {
-  new HeaderBase().init()
+  new Header().init()
   new HeaderMenu().init()
 }
 
-export { HeaderInit }
+export default HeaderInit
+export {Header, HeaderMenu}

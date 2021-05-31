@@ -7,7 +7,7 @@
   max-width: 1094px;
   height: 100vh;
   margin: 0 auto 45px;
-  padding: 120px 20px 75px;
+  padding: 110px 20px 75px;
 
   @include screen(lg) {
     row-gap: 28px;
@@ -47,5 +47,10 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    @include screen(564px) {
+      object-fit: cover;
+      object-position: 0 0;
+    }
   }
 }

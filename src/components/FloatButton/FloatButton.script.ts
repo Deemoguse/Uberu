@@ -143,4 +143,5 @@ function FloatButtonInit () {
   new FloatButtonParallax().init()
 }
 
-export { FloatButtonInit }
+export default FloatButtonInit
+export {FloatButton, FloatButtonParallax}

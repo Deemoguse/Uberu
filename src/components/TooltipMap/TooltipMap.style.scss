@@ -2,6 +2,11 @@
 
 .tooltipMap {
   height: 100vh;
+  background-size: cover;
+
+  &__wrapper.template &__img {
+    opacity: 0;
+  }
 
   @include screen(lg) {
     overflow: scroll;
@@ -20,6 +25,11 @@
     height: 100vh;
 
     @include screen(lg) {
+      height: auto;
+      width: 100%;
+    }
+    @include screen(564px) {
+      width: auto;
       height: 100%;
     }
   }

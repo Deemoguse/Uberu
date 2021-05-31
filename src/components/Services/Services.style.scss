@@ -16,8 +16,36 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-
+    position: relative;
     background-color: $purple;
+
+    @include screen(lg) {
+      &::after {
+        content: '';
+        display: block;
+        width: 90px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-image: linear-gradient(to left, $purple, $purple, transparent);
+      }
+      &::before {
+        content: '';
+        display: block;
+        height: 15px;
+        width: 15px;
+        border-top: 3px solid $white;
+        border-right: 3px solid $white;
+        border-radius: 0 3px 0 0;
+        position: absolute;
+        top: 96px;
+        right: 26px;
+        transform: rotate(45deg);
+        opacity: 0.2;
+        z-index: 1;
+      }
+    }
   }
 
   &__tagline {
@@ -32,9 +60,13 @@
     width: 370px;
     margin: auto 0;
     padding: 0 36px 70px 40px;
+    overflow-x: auto;
 
     @include screen(lg) {
-      padding: 20px 40px 40px;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      padding: 20px 70px 40px 40px;
     }
   }
 
@@ -69,6 +101,11 @@
   }
 
   &__button + &__button {
-    margin-top: 20px
+    margin-top: 20px;
+
+    @include screen(lg) {
+      margin-top: 0;
+      margin-left: 30px;
+    }
   }
 }

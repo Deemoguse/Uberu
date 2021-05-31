@@ -32,4 +32,5 @@ function CardInit () {
   new Card().init()
 }
 
-export { CardInit }
+export {Card}
+export default CardInit

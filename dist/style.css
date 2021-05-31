@@ -223,7 +223,6 @@ a {
   border-radius: 50%;
   background-color: #5A30F0;
   cursor: pointer;
-  z-index: 1;
 }
 
 .floatButton__button::before {
@@ -309,6 +308,7 @@ a {
     transform: translateX(105%);
     background-color: #ffffff;
     box-shadow: white 100px 0px 0px, rgba(0, 0, 0, 0.07) 0px 4px 18px;
+    z-index: 3;
   }
 }
 
@@ -568,7 +568,7 @@ a {
 }
 
 .intro__leftSide {
-  background-image: url("../../../../assets/img/intro_left_aside.png");
+  background-image: url("../../../assets/img/intro_left_aside.png");
   background-size: cover;
   background-position: 50% 0;
 }
@@ -632,7 +632,7 @@ a {
     width: 100%;
     height: 100%;
     opacity: 0.4;
-    background-image: url("../../../../assets/img/intro_left_aside.png");
+    background-image: url("../../../assets/img/intro_left_aside.png");
     background-size: cover;
     z-index: -1;
   }
@@ -644,7 +644,7 @@ a {
   max-width: 1094px;
   height: 100vh;
   margin: 0 auto 45px;
-  padding: 120px 20px 75px;
+  padding: 110px 20px 75px;
 }
 
 @media screen and (max-width:1024px) {
@@ -692,6 +692,13 @@ a {
   height: 100%;
   object-fit: cover;
 }
+
+@media screen and (max-width:564px) {
+  .questAnswer__img {
+    object-fit: cover;
+    object-position: 0 0;
+  }
+}
 @charset "UTF-8";
 
 .services {
@@ -712,7 +719,37 @@ a {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  position: relative;
   background-color: #5A30F0;
+}
+
+@media screen and (max-width:1024px) {
+  .services__aside::after {
+    content: "";
+    display: block;
+    width: 90px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(to left, #5A30F0, #5A30F0, transparent);
+  }
+
+  .services__aside::before {
+    content: "";
+    display: block;
+    height: 15px;
+    width: 15px;
+    border-top: 3px solid #ffffff;
+    border-right: 3px solid #ffffff;
+    border-radius: 0 3px 0 0;
+    position: absolute;
+    top: 96px;
+    right: 26px;
+    transform: rotate(45deg);
+    opacity: 0.2;
+    z-index: 1;
+  }
 }
 
 .services__tagline {
@@ -727,11 +764,15 @@ a {
   width: 370px;
   margin: auto 0;
   padding: 0 36px 70px 40px;
+  overflow-x: auto;
 }
 
 @media screen and (max-width:1024px) {
   .services__nav {
-    padding: 20px 40px 40px;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding: 20px 70px 40px 40px;
   }
 }
 
@@ -767,6 +808,13 @@ a {
 .services__button + .services__button {
   margin-top: 20px;
 }
+
+@media screen and (max-width:1024px) {
+  .services__button + .services__button {
+    margin-top: 0;
+    margin-left: 30px;
+  }
+}
 .tooltip {
   position: absolute;
   width: 1px;
@@ -783,6 +831,8 @@ a {
   display: flex;
   cursor: pointer;
   transition: 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  transform: scale(0.3) rotate(-90deg);
+  opacity: 0;
 }
 
 .tooltip__button::before {
@@ -845,6 +895,11 @@ a {
 }
 .tooltipMap {
   height: 100vh;
+  background-size: cover;
+}
+
+.tooltipMap__wrapper.template .tooltipMap__img {
+  opacity: 0;
 }
 
 @media screen and (max-width:1024px) {
@@ -868,6 +923,14 @@ a {
 
 @media screen and (max-width:1024px) {
   .tooltipMap__img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:564px) {
+  .tooltipMap__img {
+    width: auto;
     height: 100%;
   }
 }
